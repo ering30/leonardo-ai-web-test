@@ -55,7 +55,7 @@ export default function Navbar() {
 
         <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
           <Flex display={{ base: 'none', md: 'flex' }}>
-            <DesktopNav />
+            {session && <DesktopNav />}
           </Flex>
         </Flex>
 
@@ -176,21 +176,25 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
 }
 
 interface NavItem {
-  label: string
   href?: string
+  label: string
 }
 
 const NAV_ITEMS: Array<NavItem> = [
+  {
+    label: 'Home',
+    href: '/',
+  },
   {
     label: 'My Username',
     href: '/username',
   },
   {
     label: 'My Job Title',
-    href: '#',
+    href: '/jobTitle',
   },
   {
-    label: 'Random Fact',
-    href: '#',
+    label: 'Public Api',
+    href: '/publicApi',
   },
 ]
