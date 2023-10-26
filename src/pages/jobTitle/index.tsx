@@ -1,17 +1,17 @@
 import { useEffect } from "react"
 
 import Layout from '@/components/Layout'
-import UsernameForm from "@/components/Forms/UsernameForm"
+import JobTitleForm from "@/components/Forms/JobTitleForm"
 
 import useUser from "@/hooks/useUser"
 
-const UsernamePage = () => {
+const JobTitlePage = () => {
 
   const userPayload = useUser()
   const {
     callbacks: {
       fetchUser,
-      setUsername,
+      setJobTitle,
     },
     sessionUserEmail,
     user,
@@ -23,9 +23,9 @@ const UsernamePage = () => {
 
   return (
     <Layout>
-      <UsernameForm callbacks={{ setUsername }} user={user} />
+      <JobTitleForm callbacks={{ setJobTitle }} user={user} />
     </Layout>
   )
 }
 
-export default UsernamePage
+export default JobTitlePage
