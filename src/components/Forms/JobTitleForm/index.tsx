@@ -30,7 +30,7 @@ const JobTitleForm = (props: JobTitleFormProps) => {
   } = user || {}
 
   // TODO
-  // intialValues doesn't wait for jobTitle to load and isn't rendered 
+  // intialValues prop doesn't wait for jobTitle to load and isn't rendered 
   // unless we conditionally render the whole form to wait. 
   const hasUser = !!user
 

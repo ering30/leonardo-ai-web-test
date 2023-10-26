@@ -176,8 +176,8 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
 }
 
 interface NavItem {
-  label: string
   href?: string
+  label: string
 }
 
 const NAV_ITEMS: Array<NavItem> = [
@@ -194,7 +194,7 @@ const NAV_ITEMS: Array<NavItem> = [
     href: '/jobTitle',
   },
   {
-    label: 'Random Fact',
-    href: '#',
+    label: 'Public Api',
+    href: '/publicApi',
   },
 ]
