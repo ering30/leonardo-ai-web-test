@@ -25,7 +25,7 @@ export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure()
 
   const { data: session } = useSession()
-  console.log('session', session)
+
   return (
     <Box>
       <Flex
@@ -183,14 +183,14 @@ interface NavItem {
 const NAV_ITEMS: Array<NavItem> = [
   {
     label: 'My Username',
-    href: '#',
+    href: '/username',
   },
   {
     label: 'My Job Title',
     href: '#',
   },
   {
-    label: 'Randon Fact',
+    label: 'Random Fact',
     href: '#',
   },
 ]
