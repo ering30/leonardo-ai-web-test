@@ -21,7 +21,7 @@ export default function HeroSection() {
             lineHeight={'110%'}>
             Project under construction <br />
             <Text as={'span'} color={'red.400'}>
-              bare with us
+              bear with us
             </Text>
           </Heading>
           <Text color={'gray.500'}>

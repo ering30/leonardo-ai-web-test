@@ -36,7 +36,6 @@ type SetJobTitleParams = {
 
 const setJobTitle = async (params: SetJobTitleParams) => {
   const { setUser, updatedJobTitle, userId, } = params
-  console.log('setJobTitleParams', params)
 
   try {
     const { data, error } = await supabase
@@ -45,14 +44,12 @@ const setJobTitle = async (params: SetJobTitleParams) => {
       .eq('id', userId)
       .select()
 
-    console.log('error in try', error, data)
     if (error) throw error
     if (!!data) {
       setUser(data[0])
       alert('Job Title Updated')
     }
-  } catch (error) {
-    console.log('error1', error)
+  } catch (error) {ß
     alert(error.message)
   }
 }
