@@ -16,13 +16,13 @@ import type { User } from '@prisma/client'
 import type { useUserPayload } from '@/hooks/useUser'
 
 interface UsernameFormProps {
-  callbacks: useUserPayload['callbacks']['setUsername'],
+  callbacks: useUserPayload['callbacks'],
   user: User,
 }
 
 const UsernameForm = (props: UsernameFormProps) => {
   const { callbacks, user } = props
-  const { setUsername } = callbacks
+  const { setUser, setUsername } = callbacks
 
   const { 
     id,
@@ -50,7 +50,7 @@ const UsernameForm = (props: UsernameFormProps) => {
               username: username,
             }}
             onSubmit={(values) => {
-              setUsername({ updatedUsername: values.username, userId: id})
+              setUsername({ setUser, updatedUsername: values.username, userId: id})
             }}
           >
             {({ handleSubmit }) => (

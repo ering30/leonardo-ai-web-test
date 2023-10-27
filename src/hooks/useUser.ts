@@ -92,8 +92,9 @@ const useUser = () => {
   return {
     callbacks: {
       fetchUser: () => fetchUser({ email: sessionUserEmail, setUser }),
-      setJobTitle: (payload: SetJobTitleParams) => setJobTitle({...payload, setUser}),
-      setUsername: (payload: SetUsernameParams) => setUsername({...payload, setUser}),
+      setJobTitle: (payload: SetJobTitleParams) => setJobTitle(payload),
+      setUsername: (payload: SetUsernameParams) => setUsername(payload),
+      setUser,
     },
     sessionUserEmail,
     user,

@@ -16,13 +16,13 @@ import type { User } from '@prisma/client'
 import type { useUserPayload } from '@/hooks/useUser'
 
 interface JobTitleFormProps {
-  callbacks: useUserPayload['callbacks']['setJobTitle'],
+  callbacks: useUserPayload['callbacks'],
   user: User,
 }
 
 const JobTitleForm = (props: JobTitleFormProps) => {
   const { callbacks, user } = props
-  const { setJobTitle } = callbacks
+  const { setUser, setJobTitle } = callbacks
 
   const { 
     id,
@@ -50,7 +50,7 @@ const JobTitleForm = (props: JobTitleFormProps) => {
               jobTitle: jobTitle,
             }}
             onSubmit={(values) => {
-              setJobTitle({ updatedJobTitle: values.jobTitle, userId: id})
+              setJobTitle({ setUser, updatedJobTitle: values.jobTitle, userId: id })
             }}
           >
             {({ handleSubmit }) => (
