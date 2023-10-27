@@ -44,12 +44,15 @@ const setJobTitle = async (params: SetJobTitleParams) => {
       .update({ jobTitle: updatedJobTitle })
       .eq('id', userId)
       .select()
+
+    console.log('error in try', error, data)
     if (error) throw error
     if (!!data) {
       setUser(data[0])
       alert('Job Title Updated')
     }
   } catch (error) {
+    console.log('error1', error)
     alert(error.message)
   }
 }

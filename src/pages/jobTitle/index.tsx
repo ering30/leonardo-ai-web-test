@@ -9,9 +9,9 @@ const JobTitlePage = () => {
 
   const userPayload = useUser()
   const {
+    callbacks,
     callbacks: {
       fetchUser,
-      setJobTitle,
     },
     sessionUserEmail,
     user,
@@ -23,7 +23,7 @@ const JobTitlePage = () => {
 
   return (
     <Layout>
-      <JobTitleForm callbacks={{ setJobTitle }} user={user} />
+      <JobTitleForm callbacks={callbacks} user={user} />
     </Layout>
   )
 }

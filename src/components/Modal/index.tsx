@@ -49,7 +49,7 @@ const WelcomeModal = () => {
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme='green' mr={3} onClick={onClose}>
+            <Button colorScheme='green' mr={3} onClick={handleClose}>
               Close
             </Button>
           </ModalFooter>

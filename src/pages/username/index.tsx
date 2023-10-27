@@ -9,9 +9,9 @@ const UsernamePage = () => {
 
   const userPayload = useUser()
   const {
+    callbacks,
     callbacks: {
       fetchUser,
-      setUsername,
     },
     sessionUserEmail,
     user,
@@ -23,7 +23,7 @@ const UsernamePage = () => {
 
   return (
     <Layout>
-      <UsernameForm callbacks={{ setUsername }} user={user} />
+      <UsernameForm callbacks={callbacks} user={user} />
     </Layout>
   )
 }

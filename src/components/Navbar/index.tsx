@@ -72,7 +72,7 @@ export default function Navbar() {
             fontWeight={600}
             color={'white'}
             bg={session ? 'green.400' : 'red.400'}
-            onClick={session ? () => signOut() : () => signIn()}
+            onClick={session ? () => signOut({ callbackUrl: process.env.NEXTAUTH_URL}) : () => signIn()}
             _hover={session ? { bg: 'green.300' } : { bg: 'red.300' }}>
             {session ? 'Sign Out' : 'Sign In'}
           </Button>
