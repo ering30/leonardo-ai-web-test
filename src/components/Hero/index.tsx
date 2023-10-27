@@ -25,7 +25,7 @@ export default function HeroSection() {
             </Text>
           </Heading>
           <Text color={'gray.500'}>
-            This project is currently being built. Sign In or Sign Up to see what's on offer so far.
+            This project is currently being built. Sign In or Sign Up to see what&apos;s on offer so far.
           </Text>
         </Stack>
       </Container>
