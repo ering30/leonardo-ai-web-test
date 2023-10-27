@@ -15,6 +15,9 @@ import type { User } from '@prisma/client'
 
 import type { useUserPayload } from '@/hooks/useUser'
 
+type OnSubmitParams = {
+  jobTitle: string
+}
 interface JobTitleFormProps {
   callbacks: useUserPayload['callbacks'],
   user: User,
@@ -49,8 +52,8 @@ const JobTitleForm = (props: JobTitleFormProps) => {
             initialValues={{
               jobTitle: jobTitle,
             }}
-            onSubmit={(values) => {
-              setJobTitle({ setUser, updatedJobTitle: values.jobTitle, userId: id })
+            onSubmit={({ jobTitle }: OnSubmitParams) => {
+              setJobTitle({ setUser, updatedJobTitle: jobTitle, userId: id })
             }}
           >
             {({ handleSubmit }) => (

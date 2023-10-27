@@ -15,6 +15,9 @@ import type { User } from '@prisma/client'
 
 import type { useUserPayload } from '@/hooks/useUser'
 
+type OnSubmitParams = {
+  username: string
+}
 interface UsernameFormProps {
   callbacks: useUserPayload['callbacks'],
   user: User,
@@ -49,8 +52,8 @@ const UsernameForm = (props: UsernameFormProps) => {
             initialValues={{
               username: username,
             }}
-            onSubmit={(values) => {
-              setUsername({ setUser, updatedUsername: values.username, userId: id})
+            onSubmit={({ username }: OnSubmitParams) => {
+              setUsername({ setUser, updatedUsername: username, userId: id})
             }}
           >
             {({ handleSubmit }) => (
